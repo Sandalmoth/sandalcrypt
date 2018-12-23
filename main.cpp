@@ -11,7 +11,7 @@
 using namespace std;
 
 
-const string VERSION = "1.0.0";
+const string VERSION = "1.0.1";
 
 
 #define BLOCK_SIZE 8
@@ -96,9 +96,6 @@ int main(int argc, char **argv) {
   while (true) {
     size_t i = 0;
     while (infile.get(buffer_in[i]) && ++i < BLOCK_SIZE);
-    for (auto x: buffer_in) cout << x << ' ';
-    cout << endl;
-    cout << i << endl;
 
     encrypt(buffer_in, buffer_out, i, rng);
 
